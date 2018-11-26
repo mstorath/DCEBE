@@ -1,0 +1,19 @@
+DCEBE - Bolus arrival time estimation for DCE-MRI signals
+Copyright 2018 Alina Bendinger, Martin Storath
+   	
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+   
+   Additionally, if this code is used in any scientific publication, 
+   the following paper shall be cited:
+        A. Bendinger, C. Debus, C. Glowa, C. Karger, J. Peter, M. Storath. 
+        Bolus arrival time estimation in dynamic contrast-enhanced MRI of small animals based on spline models. 2018
