@@ -8,6 +8,7 @@ The proposed method employs a spline-based approximation model.
 Parameter estimation is done by generalized cross validation.
 
 A detailed documentation of the method is given in [this technical report](https://arxiv.org/pdf/1811.10672.pdf).
+See also [![View DCEBE on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://de.mathworks.com/matlabcentral/fileexchange/69526-dcebe)
 
 <img src="docs/example.png" width="80%">
 
