@@ -10,7 +10,7 @@ function [BAT, output] = DCEBE_estimateBAT( y, varargin )
 % Bolus arrival time estimation in dynamic contrast-enhanced MRI of small animals based on spline models. 2018
 %
 % Input
-% y: MxN matrix, M DCE signals of length N
+% y: NxM matrix, M DCE signals of length N
 %
 % Optional input
 % 'search_interval': search interval for coarse search of BAT
@@ -30,7 +30,7 @@ function [BAT, output] = DCEBE_estimateBAT( y, varargin )
 % Copyright 2018 Alina Bendinger, Martin Storath
 
 % init
-[N, M] = size(y); % (M DCE signals of length N)
+[N, M] = size(y); % (M DCE signals each of length N)
 
 % parse optional parameters
 ip = inputParser;
