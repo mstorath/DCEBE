@@ -51,6 +51,17 @@ if isempty(input.search_interval)
     input.search_interval(2) = max(interval_cand(2));
 end
 
+% crop search interval to maximum possible search interval
+max_interval =  N - max(input.orders) -1;
+input.search_interval(2) = min(input.search_interval(2), max_interval);
+
+% if no reasonable search interval is found, use entire domain
+if isempty(input.search_interval) || (input.search_interval(1) > input.search_interval(2))
+    input.search_interval = [1, max_interval];
+end
+
+
+
 % options for optimizer
 switch input.solver_type
     case 'fminsearch'
