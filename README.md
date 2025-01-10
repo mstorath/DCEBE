@@ -7,8 +7,11 @@ as it is often the case for data of small animals.
 The proposed method employs a spline-based approximation model.
 Parameter estimation is done by generalized cross validation.
 
-A detailed documentation of the method is given in [this technical report](https://arxiv.org/pdf/1811.10672.pdf).
-See also [![View DCEBE on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://de.mathworks.com/matlabcentral/fileexchange/69526-dcebe)
+A detailed documentation of the method is given in
+the paper A. Bendinger, C. Debus, C. Glowa, C. Karger, J. Peter, M. Storath,
+[Bolus arrival time estimation in dynamic contrast-enhanced MRI of small animals based on spline models,](https://doi.org/10.1088/1361-6560/aafce7)
+Physics in Medicine & Biology, Volume 64, Number 4, 2019. 
+[preprint link](https://arxiv.org/pdf/1811.10672.pdf). [![View DCEBE on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://de.mathworks.com/matlabcentral/fileexchange/69526-dcebe)
 
 <img src="docs/example.png" width="80%">
 
@@ -20,7 +23,9 @@ See also [![View DCEBE on File Exchange](https://www.mathworks.com/matlabcentral
 The method is described in the paper
 
 - A. Bendinger, C. Debus, C. Glowa, C. Karger, J. Peter, M. Storath,
-"Bolus arrival time estimation in dynamic contrast-enhanced MRI of small animals based on spline models".
+[Bolus arrival time estimation in dynamic contrast-enhanced MRI of small animals based on spline models](https://doi.org/10.1088/1361-6560/aafce7)
+Physics in Medicine & Biology, Volume 64, Number 4, 2019
+
 
 ## Acknowledgement 
 Thanks to T. Driscoll for sharing his code for [computing finite difference weights.](https://de.mathworks.com/matlabcentral/fileexchange/13878-finite-difference-weights)
