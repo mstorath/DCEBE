@@ -25,7 +25,16 @@ from ._spline import make_deriv_pattern, make_matrix
 
 _DEFAULT_BETA_COARSE = np.linspace(1.0, 25.0, 50)
 _DEFAULT_ORDERS = (3, 4, 5, 6)
-_FMINUNC_OPTIONS = {"maxiter": 1000, "gtol": 1e-6}
+_FMINUNC_OPTIONS = {
+    "maxiter": 1000,
+    "gtol": 1e-6,
+    # MATLAB's fminunc uses central FD with step ~ eps^(1/3) ≈ 6e-6.
+    # SciPy's L-BFGS-B forward FD default step is ~1e-8, which is too
+    # small to escape integer-t kinks in the spline matrix structure.
+    # Bumping eps to 1e-4 trades ~5e-3 BAT precision for cross-solver
+    # parity within the same basin.
+    "eps": 1e-4,
+}
 _FMINSEARCH_OPTIONS = {"maxiter": 100000, "maxfev": 100000, "xatol": 1e-4, "fatol": 1e-4}
 
 
@@ -121,9 +130,24 @@ def _validate_inputs(
     return y, (lo, hi), beta_arr, orders
 
 
+_INTEGER_KINK_JITTER = 1.0e-3
+
+
 def _fine_search(f, x0, solver_name):
     """Mirror of MATLAB's ``fminunc`` ('quasi-newton', central FD) /
-    ``fminsearch`` (Nelder-Mead) options. Returns ``(x_opt, f_opt)``."""
+    ``fminsearch`` (Nelder-Mead) options. Returns ``(x_opt, f_opt)``.
+
+    SciPy's L-BFGS-B uses forward finite differences whereas MATLAB's
+    ``fminunc`` uses central; the difference matters at integer ``t``
+    where the spline matrix structure swaps and the objective has a
+    kink (C^0 but not C^1). When ``x0[0]`` lands on an integer (which
+    happens whenever the coarse-grid minimiser is at an integer node),
+    we apply a sub-grid jitter to push it inside the integer cell.
+    Central FD averages over the kink, but forward FD does not.
+    """
+    x0 = np.asarray(x0, dtype=float).copy()
+    if abs(x0[0] - round(x0[0])) < 1e-6:
+        x0[0] += _INTEGER_KINK_JITTER
     if solver_name == "L-BFGS-B":
         result = minimize(f, x0, method="L-BFGS-B", options=_FMINUNC_OPTIONS)
     else:  # Nelder-Mead
