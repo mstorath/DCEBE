@@ -1,6 +1,6 @@
 % show license
 disp('----------')
-lic = fileread('License');
+lic = fileread('LICENSE');
 disp(lic);
 disp('----------')
 clear('lic')

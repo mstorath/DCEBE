@@ -16,7 +16,7 @@ Physics in Medicine & Biology, Volume 64, Number 4, 2019.
 <img src="docs/example.png" width="80%">
 
 ## Quickstart
-- Run "DCEC_install.m" or add subfolders manually to Matlab path 
+- Run "DCEBE_install.m" or add subfolders manually to Matlab path 
 - Run a demo script from the demos folder, e.g. "DCEBE_demo.m"
 
 ## How to cite
