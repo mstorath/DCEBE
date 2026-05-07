@@ -104,7 +104,7 @@ The `CITATION.cff` at the repository root provides machine-readable metadata.
 ## How the Python implementation differs from MATLAB
 
 - **Numerical kernel**: same algorithm; SciPy LAPACK calls (QR, SVD, eigendecomposition) replace MATLAB's `mldivide` / `eig` / `svd`.
-- **Bug fixes baked in**: the linear-indexing bug at `DCEBE_estimateBAT.m:50` (default search interval used only signal 1's bounds) is fixed in the canonical Python `default_interval`. See [reports/06-dcebe-bug-fixes.md](../reports/06-dcebe-bug-fixes.md).
+- **Bug fixes baked in**: the linear-indexing bug at `DCEBE_estimateBAT.m:50` (default search interval used only signal 1's bounds) is fixed in the canonical Python `default_interval`.
 - **Default optimiser**: `scipy.optimize.minimize(method="L-BFGS-B")`. The MATLAB reference uses `fminunc` quasi-Newton with central finite differences; the SciPy version uses forward FD with a slightly enlarged step (`eps=1e-4`) and a sub-grid jitter on integer-`t` starting points to bridge the kink the spline-matrix structure has there.
 - **`factorize=True` path**: ported as `dcebe._factorize.gcv_score_factorize` but **not exposed** through `estimate_bat`; the MATLAB source itself notes the QR path is better-conditioned.
 
@@ -117,4 +117,4 @@ The `CITATION.cff` at the repository root provides machine-readable metadata.
 - exact match on `k_opt`
 - `rtol(beta_opt) = 0.2` (the GCV objective is flat in beta near the optimum)
 
-See [reports/07-dcebe-port-plan.md](../reports/07-dcebe-port-plan.md) for the full porting plan and `tests_py/test_matlab_parity.py` for the parity assertions.
+See `tests_py/test_matlab_parity.py` for the parity assertions.

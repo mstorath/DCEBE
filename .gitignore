@@ -19,5 +19,8 @@ env/
 .DS_Store
 Thumbs.db
 
+# Generated demo plots
+demos_py/*.png
+
 # MATLAB
 *.asv
