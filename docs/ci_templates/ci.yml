@@ -1,0 +1,36 @@
+# Template — copy to `.github/workflows/ci.yml` to enable.
+#
+# Pure-Python pytest matrix for the dcebe package. The agent does not
+# touch .github/ directly per CLAUDE.md; copy this file into place
+# manually and commit on a separate branch (no agent push).
+
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install package and test deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .[test]
+
+      - name: Run pytest (skip MATLAB parity if fixtures absent)
+        run: pytest tests_py/ -v
