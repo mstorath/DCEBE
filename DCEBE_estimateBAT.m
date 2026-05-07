@@ -47,8 +47,8 @@ input = ip.Results;
 % determine search intervals
 if isempty(input.search_interval)
     interval_cand = DCEBE_searchIntervals(y, 'min-max-refined');
-    input.search_interval(1) = min(interval_cand(1));
-    input.search_interval(2) = max(interval_cand(2));
+    input.search_interval(1) = min(interval_cand(1,:));
+    input.search_interval(2) = max(interval_cand(2,:));
 end
 
 % crop search interval to maximum possible search interval
@@ -80,7 +80,7 @@ switch input.solver_type
         solver = @(f, param) fminunc(f, param, options_fminunc);
         
     otherwise
-        error('Solver mist be fminsearch or fminunc.')
+        error('Solver must be fminsearch or fminunc.')
 end
 
 % init

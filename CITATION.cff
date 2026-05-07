@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the associated paper below."
+title: "DCEBE: Bolus arrival time estimation for DCE-MRI signals"
+abstract: "Reference MATLAB implementation of a spline-based model for estimating the bolus arrival time of dynamic contrast-enhanced MRI (DCE-MRI) signals. Particularly intended for signals without a fast upslope, as commonly seen in small-animal data. Parameters are selected via generalised cross-validation."
+type: software
+url: "https://github.com/mstorath/DCEBE"
+repository-code: "https://github.com/mstorath/DCEBE"
+license: Apache-2.0
+authors:
+  - family-names: Bendinger
+    given-names: Alina L.
+    affiliation: "Department of Medical Physics in Radiation Oncology, German Cancer Research Center (DKFZ), Heidelberg"
+    # ORCID: not available in publicly-indexed metadata at time of writing.
+  - family-names: Storath
+    given-names: Martin
+    email: martin.storath@thws.de
+    orcid: "https://orcid.org/0000-0003-1427-0776"
+    affiliation: "Lab for Mathematical Methods in Computer Vision and Machine Learning, Technische Hochschule Würzburg-Schweinfurt"
+preferred-citation:
+  type: article
+  title: "Bolus arrival time estimation in dynamic contrast-enhanced magnetic resonance imaging of small animals based on spline models"
+  authors:
+    - family-names: Bendinger
+      given-names: Alina L.
+    - family-names: Debus
+      given-names: Charlotte
+      orcid: "https://orcid.org/0000-0002-7156-2022"
+    - family-names: Glowa
+      given-names: Christin
+    - family-names: Karger
+      given-names: Christian P.
+    - family-names: Peter
+      given-names: Jörg
+      orcid: "https://orcid.org/0000-0002-5603-0458"
+    - family-names: Storath
+      given-names: Martin
+      orcid: "https://orcid.org/0000-0003-1427-0776"
+  journal: "Physics in Medicine & Biology"
+  volume: 64
+  issue: 4
+  start: "045003"
+  year: 2019
+  publisher:
+    name: "IOP Publishing"
+  doi: "10.1088/1361-6560/aafce7"
