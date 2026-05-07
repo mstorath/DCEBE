@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dcebe"
+version = "0.1.0.dev0"
+description = "Bolus arrival time estimation for DCE-MRI signals via spline models with generalized cross-validation"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Alina Bendinger" },
+    { name = "Martin Storath", email = "martin.storath@thws.de" },
+]
+requires-python = ">=3.9"
+keywords = [
+    "bolus-arrival-time",
+    "DCE-MRI",
+    "dynamic-contrast-enhanced",
+    "spline",
+    "generalized-cross-validation",
+    "small-animal-imaging",
+    "variational-methods",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "numpy>=1.23",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+demos = ["matplotlib>=3.6"]
+
+[project.urls]
+Homepage = "https://github.com/mstorath/DCEBE"
+Repository = "https://github.com/mstorath/DCEBE"
+
+[tool.hatch.build.targets.wheel]
+packages = ["python/dcebe"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests_py"]
+pythonpath = ["python"]
