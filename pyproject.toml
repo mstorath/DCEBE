@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "dcebe"
-version = "0.1.0.dev0"
+version = "0.1.0"
 description = "Bolus arrival time estimation for DCE-MRI signals via spline models with generalized cross-validation"
 license = { file = "LICENSE" }
 authors = [

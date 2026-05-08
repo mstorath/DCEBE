@@ -11,13 +11,11 @@ Reference:
     small animals based on spline models", Physics in Medicine & Biology
     64(4), 2019. DOI: 10.1088/1361-6560/aafce7
 
-The user-facing API is :func:`estimate_bat`. The current build is
-``0.1.0.dev0`` and exposes only the spline-construction primitives;
-:func:`estimate_bat` lands in a later port day.
+The user-facing API is :func:`estimate_bat`.
 """
 from __future__ import annotations
 
 from ._solve import EstimateResult, estimate_bat
 
 __all__ = ["EstimateResult", "estimate_bat"]
-__version__ = "0.1.0.dev0"
+__version__ = "0.1.0"
