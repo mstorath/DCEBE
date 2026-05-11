@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite both the software and the associated paper below."
 title: "DCEBE: Bolus arrival time estimation for DCE-MRI signals"
-version: 0.1.0
-date-released: 2026-05-08
+version: 1.0.0
+date-released: 2026-05-11
 abstract: "Reference MATLAB implementation of a spline-based model for estimating the bolus arrival time of dynamic contrast-enhanced MRI (DCE-MRI) signals. Particularly intended for signals without a fast upslope, as commonly seen in small-animal data. Parameters are selected via generalised cross-validation."
 type: software
 url: "https://github.com/mstorath/DCEBE"
