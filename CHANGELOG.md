@@ -41,3 +41,6 @@ from the 0.1.0 dev release.
   removed. The LICENSE file is now pure Apache-2.0 matching the
   declaration in `CITATION.cff` and `pyproject.toml`. The citation
   request lives in `CITATION.cff` and the README.
+
+[Unreleased]: https://github.com/mstorath/DCEBE/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/mstorath/DCEBE/releases/tag/v1.0.0

@@ -110,7 +110,7 @@ The `CITATION.cff` at the repository root provides machine-readable metadata.
 
 ## Status
 
-`0.1.0.dev0`. Parity tested against MATLAB on three pinned-seed configurations:
+**1.0.0 — first stable release.** Parity tested against MATLAB on three pinned-seed configurations:
 
 - `atol(BAT) = 1e-2` (a hundredth of a sample)
 - `atol(score_opt) = 1e-3` (load-bearing — both solvers find the same minimum value)
