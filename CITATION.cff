@@ -3,7 +3,7 @@ message: "If you use this software, please cite both the software and the associ
 title: "DCEBE: Bolus arrival time estimation for DCE-MRI signals"
 version: 1.0.0
 date-released: 2026-05-11
-abstract: "Reference MATLAB implementation of a spline-based model for estimating the bolus arrival time of dynamic contrast-enhanced MRI (DCE-MRI) signals. Particularly intended for signals without a fast upslope, as commonly seen in small-animal data. Parameters are selected via generalised cross-validation."
+abstract: "Spline-based estimator for the bolus arrival time of dynamic contrast-enhanced MRI (DCE-MRI) signals, particularly intended for signals without a fast upslope as commonly seen in small-animal data. Parameters are selected via generalised cross-validation. Distributed as a published Python package (`dcebe` on PyPI) alongside the original MATLAB reference implementation."
 type: software
 url: "https://github.com/mstorath/DCEBE"
 repository-code: "https://github.com/mstorath/DCEBE"
