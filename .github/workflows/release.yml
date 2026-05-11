@@ -1,5 +1,3 @@
-# Template — copy to `.github/workflows/release.yml` to enable.
-#
 # Tag-gated PyPI publication via OIDC trusted publishing. No PyPI API
 # token required after one-time configuration on PyPI side. Triggers
 # only on annotated tags matching `v*.*.*`.
@@ -63,10 +61,10 @@ jobs:
 
       - name: Extract release notes from CHANGELOG.md (or fall through)
         # Pulls the section bounded by `## <ver>` (bracket-tolerant) and
-        # the next `## ` heading. DCEBE doesn't have a CHANGELOG.md yet —
-        # this step writes a stub link to the tag's commits, and the
-        # release-creation step's `generate_release_notes: true` provides
-        # an auto-generated PR/commit summary as the visible content.
+        # the next `## ` heading. Falls back to a tag-commits stub if
+        # the matching heading isn't found; the release-creation step's
+        # `generate_release_notes: true` then provides an auto-generated
+        # PR/commit summary as the visible content.
         run: |
           VER="${GITHUB_REF_NAME#v}"
           if [ -f CHANGELOG.md ]; then

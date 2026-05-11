@@ -1,8 +1,4 @@
-# Template — copy to `.github/workflows/ci.yml` to enable.
-#
-# Pure-Python pytest matrix for the dcebe package. The agent does not
-# touch .github/ directly per CLAUDE.md; copy this file into place
-# manually and commit on a separate branch (no agent push).
+# Pure-Python pytest matrix for the dcebe package.
 
 name: CI
 
